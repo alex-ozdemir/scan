@@ -1,0 +1,4 @@
+[package]
+name = "scan"
+version = "0.1.0"
+authors = ["Alex Ozdemir <aozdemir@hmc.edu>"]
