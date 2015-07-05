@@ -95,7 +95,7 @@ impl<R: Read> Scan for Scanner<R> {
                             if is_white(&c) && out.len() > 0 {
                                 return Some(Ok(out));
                             }
-                            else if is_white(&c) {
+                            else if !is_white(&c) {
                                 out.push(c);
                             }
                         }
