@@ -5,7 +5,7 @@ use std::fmt;
 use std::any::Any;
 use std::error::Error;
 
-#[derive(Debug)]
+#[derive(Debug,PartialEq)]
 pub enum ScanError<F> where F: FromStr {
     Parse(F::Err),
     Io(CharsError),

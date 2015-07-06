@@ -7,4 +7,4 @@
 
 mod scan;
 
-pub use scan::{Scanner, Scan};
+pub use scan::{Scanner, Scan, ScanError};
