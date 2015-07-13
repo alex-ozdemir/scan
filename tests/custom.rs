@@ -3,7 +3,7 @@ extern crate scan;
 use std::io;
 use std::fs;
 use std::str::FromStr;
-use scan::{Scan, Scanner};
+use scan::{Scan, Scanner, ScanError};
 
 #[derive(Debug, PartialEq)]
 struct Power10 {
@@ -43,9 +43,17 @@ fn test_it() {
     let second = input.next::<Power10>().unwrap().unwrap();
     assert_eq!(Power10{ power:5 }, second);
     let third = input.next::<Power10>().unwrap();
-    assert!(third.is_err());
+    match third {
+        Err(ScanError::Parse( () )) => assert!(true),
+        Err(ScanError::Io(_)) => assert!(false),
+        Ok(_) => assert!(false),
+    }
     let fourth = input.next::<Power10>().unwrap();
-    assert!(fourth.is_err());
+    match fourth {
+        Err(ScanError::Parse( () )) => assert!(true),
+        Err(ScanError::Io(_)) => assert!(false),
+        Ok(_) => assert!(false),
+    }
     let fifth = input.next::<Power10>();
     assert!(fifth.is_none());
 }

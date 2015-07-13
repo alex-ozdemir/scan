@@ -5,7 +5,7 @@ use std::fmt;
 use std::any::Any;
 use std::error::Error;
 
-#[derive(Debug,PartialEq)]
+#[derive(Debug)]
 pub enum ScanError<F> where F: FromStr {
     Parse(F::Err),
     Io(CharsError),
@@ -60,23 +60,26 @@ pub trait Scan {
     }
 }
 
-pub struct Scanner<R> {
-    chars: Chars<R>,
+pub struct Scanner<I> where
+    I: Iterator<Item = Result<char,CharsError>> {
+    chars: I,
 }
 
 fn is_white(c: &char) -> bool {
     *c == ' '  || *c == '\t' || *c == '\n' || *c == '\r'
 }
 
-impl<R: Read> Scanner<R> {
+impl<R> Scanner<Chars<R>> where R: Read {
 
-    pub fn new(reader: R) -> Scanner<R> {
+    pub fn new(reader: R) -> Scanner<Chars<R>> {
         Scanner{ chars: reader.chars() }
     }
 
 }
 
-impl<R: Read> Scan for Scanner<R> {
+impl<I> Scan for Scanner<I> where
+    I: Iterator<Item = Result<char,CharsError>> {
+
     fn next_str(&mut self) -> Option<Result<String, CharsError>> {
         let mut out = String::new();
         loop {
