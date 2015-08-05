@@ -17,3 +17,11 @@ fn main() {
   println!("Integer 2: {}" int2);
 }
 ```
+
+# Acquire
+
+This crate can be acquired through [crates.io](https://crates.io/crates/scan)
+
+# Documentation
+
+Documentation is hosted [here](http://alex-ozdemir.github.io/rust/doc/scan/)
