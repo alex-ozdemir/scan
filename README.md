@@ -21,6 +21,7 @@ fn main() {
 # Acquire
 
 This crate can be acquired through [crates.io](https://crates.io/crates/scan).
+One thing of note is that this crate requires nightly rust, due to instability in the `io` module.
 
 # Documentation
 
