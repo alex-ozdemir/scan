@@ -20,8 +20,8 @@ fn main() {
 
 # Acquire
 
-This crate can be acquired through [crates.io](https://crates.io/crates/scan)
+This crate can be acquired through [crates.io](https://crates.io/crates/scan).
 
 # Documentation
 
-Documentation is hosted [here](http://alex-ozdemir.github.io/rust/doc/scan/)
+Documentation is hosted [here](http://alex-ozdemir.github.io/rust/doc/scan/).
