@@ -2,3 +2,10 @@
 name = "scan"
 version = "0.1.0"
 authors = ["Alex Ozdemir <aozdemir@hmc.edu>"]
+description = "Crate for tokenizing and parsing delimitted input"
+documentation = "http://alex-ozdemir.github.io/rust/doc/scan"
+repository = "http://github.com/alex-ozdemir/scan"
+homepage = "http://github.com/alex-ozdemir/scan"
+readme = "README.md"
+keywords = ["parse", "input", "read", "whitespace"]
+license = "MIT"
